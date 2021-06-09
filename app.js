@@ -46,7 +46,7 @@ const isNewUser = async (message) => {
     const dmMessages = await message.channel.messages.fetch();
     const botMessages = dmMessages.filter(msg => msg.author.bot);
 
-    if (botMessages) {
+    if (botMessages.size) {
         return false;
     }
 
